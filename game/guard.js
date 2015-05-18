@@ -5,10 +5,10 @@ module.exports = function (creep) {
     if (targets.length) {
         creep.rangedAttack(targets[0]);
 
-        var enemies = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 2);
+        var enemy = creep.pos.findNearest(FIND_HOSTILE_CREEPS);
 
-        if (enemies.length) {
-            creep.moveTo(enemies[0].pos.x - 1, enemies[0].pos.y - 1);
+        if (creep.pos.inRangeTo(enemy.pos, 2)) {
+            creep.moveTo(enemy.pos.x - 1, enemy.pos.y - 1);
         }
 
         return;
