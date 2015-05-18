@@ -57,7 +57,7 @@ module.exports = function () {
     }
 
     else if (minions.medic < minions.guard / 3) {
-        modules = getTough(0);
+        modules = [];
 
         modules.push(HEAL, HEAL, HEAL, HEAL, MOVE);
 
@@ -65,7 +65,7 @@ module.exports = function () {
     }
 
     else if (minions.harvest > 0) {
-        modules = getTough(0);
+        modules = getTough(1);
 
         modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE);
 
