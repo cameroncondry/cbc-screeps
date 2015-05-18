@@ -17,7 +17,7 @@ module.exports = function (creep) {
     }
 
     if (!sources[0]) {
-        var harvester = creep.pos.findPathTo(FIND_MY_CREEPS, {
+        var harvester = creep.pos.findInRange(FIND_MY_CREEPS, 20, {
             filter: function (creep) {
                 return creep.memory.module == 'harvest';
             }
