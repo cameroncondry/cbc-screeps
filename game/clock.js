@@ -50,7 +50,7 @@ module.exports = function () {
     }
 
     else if (minions.runner < 3 || (minions.runner < 4 && score > 1800 && score < 1900)) {
-        spawnCreep([CARRY, MOVE, MOVE, CARRY, MOVE], {module: 'runner'});
+        spawnCreep([CARRY, MOVE, CARRY, CARRY, MOVE], {module: 'runner'});
     }
 
     else if (minions.medic < minions.guard / 3) {
@@ -64,7 +64,7 @@ module.exports = function () {
     else if (minions.harvest > 0) {
         modules = getTough(0);
 
-        modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE);
+        modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE);
 
         spawnCreep(modules, {module: 'guard'});
     }
