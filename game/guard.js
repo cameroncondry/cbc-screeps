@@ -14,7 +14,7 @@ module.exports = function (creep) {
         return;
     }
 
-    targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 9);
+    targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 10);
 
     if (targets.length) {
         creep.moveTo(targets[0]);
