@@ -42,7 +42,7 @@ module.exports = function () {
     };
 
     if (minions.harvest < 2) {
-        spawnCreep([WORK, WORK, WORK, MOVE], 'harvest');
+        spawnCreep([WORK, WORK, WORK, WORK, MOVE], 'harvest');
     }
 
     else if (minions.runner < 3) {
