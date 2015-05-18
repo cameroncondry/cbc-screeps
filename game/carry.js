@@ -16,7 +16,7 @@ module.exports = function (creep) {
 
     if (harvester[0]) {
         creep.moveTo(harvester[0].pos.x, harvester[0].pos.y - 1);
-        
+
         return;
     }
 

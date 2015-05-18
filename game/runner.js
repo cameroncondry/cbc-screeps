@@ -10,7 +10,7 @@ module.exports = function (creep) {
         return;
     }
 
-    if (creep.energy == creep.energyCapacity || (!sources[0] && creep.energy > 0)) {
+    if (creep.energy == creep.energyCapacity || creep.energy > 0) {
         creep.moveTo(spawn);
         creep.transferEnergy(spawn);
 
