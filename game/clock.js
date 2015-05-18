@@ -14,8 +14,6 @@ module.exports = function () {
         runner: 0
     };
 
-    console.log(score / 500);
-
     if (!hm.isNull(spawn.spawning)) return; // no action when already spawning
 
     for (var i in creeps) {
@@ -27,6 +25,8 @@ module.exports = function () {
 
     var getTough = function (amount) {
         var modules = [];
+
+        amount = Math.round(score / 500);
 
         for (var i = 0; i < amount; i++) {
             modules.push(TOUGH);
