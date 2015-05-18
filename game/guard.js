@@ -3,5 +3,7 @@ module.exports = function (creep) {
 
     if (targets.length > 0) {
         creep.rangedAttack(targets[0]);
+    } else {
+        creep.moveTo({x: 26, y: 28});
     }
-}
+};
