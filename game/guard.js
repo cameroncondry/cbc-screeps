@@ -6,7 +6,7 @@ module.exports = function (creep) {
         creep.rangedAttack(targets[0]);
 
         if (creep.hits / creep.hitsMax < 0.4) {
-            creep.moveTo(creep.pos.x, creep.pos.y - 3);
+            creep.moveTo(spawn.pos.x, spawn.pos.y - 2);
             return;
         }
 
