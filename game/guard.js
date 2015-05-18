@@ -6,9 +6,9 @@ module.exports = function (creep) {
         return;
     }
 
-    targets = creep.pos.findPathTo(FIND_HOSTILE_CREEPS);
+    targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 10);
 
     if (targets.length > 0) {
-        console.log(targets);
+        creep.moveTo(targets[0]);
     }
 };
