@@ -13,7 +13,7 @@ module.exports = function () {
         runner: 0
     };
 
-    if (spawn && !spawn.spawning) return; // no action when already spawning
+    if (spawn && spawn.spawning != null) return; // no action when already spawning
 
     for (var i in creeps) {
         var creep = creeps[i];
