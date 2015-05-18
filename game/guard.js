@@ -3,7 +3,7 @@ module.exports = function (creep) {
     var targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 3);
 
     if (targets.length) {
-        creep.rangedMassAttack();
+        creep.rangedAttack(targets[0]);
 
         if (creep.hits / creep.hitsMax < 0.4) {
             creep.moveTo(creep.pos.x, creep.pos.y - 3);
