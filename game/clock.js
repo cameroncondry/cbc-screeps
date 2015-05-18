@@ -14,7 +14,7 @@ module.exports = function () {
         runner: 0
     };
 
-    console.log(score / 1000);
+    console.log(score / 500);
 
     if (!hm.isNull(spawn.spawning)) return; // no action when already spawning
 
