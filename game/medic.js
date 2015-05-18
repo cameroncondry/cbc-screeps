@@ -8,8 +8,13 @@ module.exports = function (creep) {
     });
 
     if (target) {
-        creep.moveTo(target);
-        creep.heal(target);
+        if (creep.pos.isNearTo(target)) {
+            creep.heal(target);
+        } else {
+            creep.rangedHeal(target);
+            creep.moveTo(target);
+        }
+
         return;
     }
 

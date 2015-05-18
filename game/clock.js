@@ -21,6 +21,16 @@ module.exports = function () {
         minions[creep.memory.module]++;
     }
 
+    var getTough = function (amount) {
+        var modules = [];
+
+        for (var i = 0; i <= amount; i++) {
+            modules.push(TOUGH);
+        }
+
+        return modules;
+    };
+
     var spawnCreep = function (modules, type) {
         if (!hm.isNumber(spawn.createCreep(modules, undefined, {module: type}))) {
             console.log('created ' + type, modules);
@@ -32,17 +42,9 @@ module.exports = function () {
     }
 
     else if (minions.medic < minions.guard / 2) {
-        modules = [TOUGH];
+        modules = getTough(minions.medic);
 
-        var getHeals = function () {
-            for (var i = 0; i <= minions.medic; i++) {
-                modules.push(HEAL);
-            }
-        };
-
-        getHeals();
-
-        modules.push(MOVE);
+        modules.push([HEAL, HEAL, MOVE]);
 
         spawnCreep(modules, 'medic');
     }
