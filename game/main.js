@@ -6,6 +6,8 @@ var medic = require('medic');
 
 clock();
 
+console.log(hm.isArray([1, 2, 3]));
+
 for (var name in Game.creeps) {
     var creep = Game.creeps[name];
 

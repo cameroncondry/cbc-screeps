@@ -25,14 +25,14 @@ module.exports = function () {
     };
 
     if (minions.harvest < 2) {
-        spawnCreep([WORK, CARRY, CARRY, MOVE], 'harvest');
+        spawnCreep([WORK, CARRY, MOVE], 'harvest');
     }
 
     else if (minions.medic < minions.guard / 2) {
-        spawnCreep([TOUGH, MOVE, HEAL], 'medic');
+        spawnCreep([TOUGH, HEAL, MOVE], 'medic');
     }
 
     else if (minions.harvest > 0) {
-        spawnCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK], 'guard');
+        spawnCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK], 'guard');
     }
 };
