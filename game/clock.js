@@ -53,7 +53,7 @@ module.exports = function () {
         spawnCreep([CARRY, MOVE, MOVE, CARRY, MOVE], {module: 'runner'});
     }
 
-    else if (minions.medic < minions.guard / 2) {
+    else if (minions.medic < minions.guard / 3) {
         modules = [];
 
         modules.push(HEAL, MOVE, HEAL, HEAL, MOVE);
@@ -62,7 +62,7 @@ module.exports = function () {
     }
 
     else if (minions.harvest > 0) {
-        modules = getTough(minions.guard);
+        modules = getTough(0);
 
         modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE);
 

@@ -13,5 +13,5 @@ module.exports = function (creep) {
         return;
     }
 
-    creep.moveTo({x: 24, y: 23});
+    creep.moveTo({x: 24, y: 22});
 };
