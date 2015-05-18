@@ -39,7 +39,7 @@ module.exports = function () {
             var modules = [];
 
             for (var i = 0; i < minions.guard; i++) {
-                hm.extend(modules, RANGED_ATTACK);
+                hm.extend(modules, [RANGED_ATTACK]);
             }
 
             return modules;
