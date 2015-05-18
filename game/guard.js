@@ -3,7 +3,12 @@ module.exports = function (creep) {
 
     if (targets.length > 0) {
         creep.rangedAttack(targets[0]);
-    } else {
-        creep.moveTo({x: 26, y: 27});
+        return;
+    }
+
+    targets = creep.pos.findPathTo(FIND_HOSTILE_CREEPS);
+
+    if (targets.length > 0) {
+        console.log(targets);
     }
 };
