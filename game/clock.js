@@ -18,18 +18,21 @@ module.exports = function () {
         minions[creep.memory.module]++;
     }
 
+    var spawnCreep = function (modules, type) {
+        if (spawn.createCreep(modules, undefined, {module: type})) {
+            console.log('created ' + type);
+        }
+    };
+
     if (minions.harvest < 2) {
-        console.log('create harvest');
-        console.log(spawn.createCreep([WORK, CARRY, CARRY, MOVE], undefined, {module: 'harvest'}));
+        spawnCreep([WORK, CARRY, CARRY, MOVE], 'harvest');
     }
 
-    if (minions.medic < 1 && minions.guard > 0) {
-        console.log('create medic');
-        console.log(spawn.createCreep([TOUGH, MOVE, HEAL], undefined, {module: 'medic'}));
+    else if (minions.medic < minions.guard / 2) {
+        spawnCreep([TOUGH, MOVE, HEAL], 'medic');
     }
 
-    if (minions.harvest > 0 && minions.medic > 0 || minions.guard === 0) {
-        console.log('create guard');
-        console.log(spawn.createCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK], undefined, {module: 'guard'}));
+    else if (minions.harvest > 0 && minions.medic > 0) {
+        spawnCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK], 'guard');
     }
 };
