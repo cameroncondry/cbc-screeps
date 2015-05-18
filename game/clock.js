@@ -48,7 +48,7 @@ module.exports = function () {
         spawnCreep([WORK, WORK, WORK, CARRY, MOVE], {module: 'harvest'});
     }
 
-    else if (minions.runner < 2) {
+    else if (minions.runner < 3) {
         spawnCreep([CARRY, MOVE, CARRY, CARRY, MOVE], {module: 'runner'});
     }
 
