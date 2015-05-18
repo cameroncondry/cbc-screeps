@@ -44,7 +44,7 @@ module.exports = function () {
     else if (minions.medic < minions.guard / 2) {
         modules = getTough(minions.medic);
 
-        modules.push([HEAL, HEAL, MOVE]);
+        modules.push(HEAL, HEAL, MOVE);
 
         spawnCreep(modules, 'medic');
     }
