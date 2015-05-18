@@ -45,7 +45,7 @@ module.exports = function () {
             return modules;
         };
 
-        console.log(hm.extend([], [TOUGH, MOVE], getAttacks()));
+        console.log([TOUGH, MOVE].push(getAttacks()));
 
         spawnCreep([TOUGH, RANGED_ATTACK, MOVE], 'guard');
     }
