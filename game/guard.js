@@ -2,8 +2,9 @@ module.exports = function (creep) {
     var spawn = Game.spawns.Spawn1;
     var targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 3);
 
-    if (creep.hits / creep.hitsMax < 0.4) {
+    if (creep.hits / creep.hitsMax < 0.5) {
         creep.moveTo(spawn);
+
         return;
     }
 
@@ -26,5 +27,5 @@ module.exports = function (creep) {
         return;
     }
 
-    creep.moveTo(spawn.pos.x, spawn.pos.y - 3);
+    creep.moveTo(spawn.pos.x - 1, spawn.pos.y - 3);
 };

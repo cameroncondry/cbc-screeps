@@ -20,5 +20,5 @@ module.exports = function (creep) {
         return;
     }
 
-    creep.moveTo(spawn.pos.x, spawn.pos.y + 2);
+    creep.moveTo(spawn.pos.x, spawn.pos.y + 3);
 };

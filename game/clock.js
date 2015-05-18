@@ -13,7 +13,7 @@ module.exports = function () {
         runner: 0
     };
 
-    if (spawn && spawn.spawning != null) return; // no action when already spawning
+    if (score == 0 || spawn.spawning != null) return; // no action when already spawning
 
     for (var i in creeps) {
         var creep = creeps[i];
@@ -25,7 +25,7 @@ module.exports = function () {
     var getTough = function (amount) {
         var modules = [];
 
-        amount += Math.round(score / 500);
+        amount += Math.round(score / 250);
 
         for (var i = 0; i < amount; i++) {
             modules.push(TOUGH);
@@ -48,7 +48,7 @@ module.exports = function () {
         spawnCreep([WORK, WORK, WORK, CARRY, MOVE], {module: 'harvest'});
     }
 
-    else if (minions.carry < 3) {
+    else if (minions.carry < 2) {
         spawnCreep([CARRY, MOVE, MOVE], {module: 'carry'});
     }
 
@@ -56,7 +56,7 @@ module.exports = function () {
         spawnCreep([CARRY, MOVE, MOVE, CARRY, MOVE], {module: 'runner'});
     }
 
-    else if (minions.medic < minions.guard / 2.5) {
+    else if (minions.medic < minions.guard / 2) {
         modules = [];
 
         modules.push(HEAL, HEAL, HEAL, HEAL, MOVE);
@@ -65,7 +65,7 @@ module.exports = function () {
     }
 
     else if (minions.harvest > 0) {
-        modules = getTough(1);
+        modules = getTough(0);
 
         modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE);
 

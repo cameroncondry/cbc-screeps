@@ -17,5 +17,5 @@ module.exports = function (creep) {
         return;
     }
 
-    creep.moveTo(spawn.pos.x + 2, spawn.pos.y);
+    creep.moveTo(spawn.pos.x + 2, spawn.pos.y + 2);
 };

@@ -12,8 +12,9 @@ module.exports = function (creep) {
             creep.heal(target);
         } else {
             creep.rangedHeal(target);
-            creep.moveTo(target.pos.x, target.pos.y - 2);
         }
+
+        creep.moveTo(target.pos.x, target.pos.y - 2);
 
         return;
     }

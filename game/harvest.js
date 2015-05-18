@@ -2,8 +2,6 @@ module.exports = function (creep) {
     var sources = creep.room.find(FIND_SOURCES);
     var spawn = Game.spawns.Spawn1;
 
-
-
     var carrier = creep.pos.findInRange(FIND_MY_CREEPS, 1, {
         filter: function (creep) {
             return creep.memory.module == 'carry';
