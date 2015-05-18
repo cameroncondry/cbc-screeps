@@ -2,13 +2,13 @@ module.exports = function (creep) {
     var spawn = Game.spawns.Spawn1;
     var targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 3);
 
+    if (creep.hits / creep.hitsMax < 0.4) {
+        creep.moveTo(spawn.pos.x, spawn.pos.y - 2);
+        return;
+    }
+
     if (targets.length) {
         creep.rangedAttack(targets[0]);
-
-        if (creep.hits / creep.hitsMax < 0.4) {
-            creep.moveTo(spawn.pos.x, spawn.pos.y - 2);
-            return;
-        }
 
         var enemy = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 2);
 
