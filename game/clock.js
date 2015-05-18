@@ -19,6 +19,8 @@ module.exports = function () {
     }
 
     var spawnCreep = function (modules, type) {
+        console.log(spawn.createCreep(modules, undefined, {module: type}));
+
         if (spawn.createCreep(modules, undefined, {module: type})) {
             console.log('created ' + type);
         }
