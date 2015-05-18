@@ -49,7 +49,7 @@ module.exports = function () {
     //    spawnCreep([WORK, WORK, WORK, WORK, MOVE], {module: 'harvest', source: true});
     //}
 
-    else if (minions.runner < 3 || (minions.runner < 4 && score > 1800 && score < 1900)) {
+    else if (minions.runner < 3 || (minions.runner < 4 && score > 1800)) {
         spawnCreep([CARRY, MOVE, CARRY, CARRY, MOVE], {module: 'runner'});
     }
 
