@@ -22,7 +22,7 @@ module.exports = function () {
 
     var spawnCreep = function (modules, type) {
         if (!hm.isNumber(spawn.createCreep(modules, undefined, {module: type}))) {
-            console.log('created ' + type);
+            console.log('created ' + type, modules);
         }
     };
 
@@ -35,6 +35,18 @@ module.exports = function () {
     }
 
     else if (minions.harvest > 0) {
-        spawnCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, MOVE], 'guard');
+        var getAttacks = function () {
+            var modules = [];
+
+            for (var i = 0; i < minions.guard; i++) {
+                hm.extend(modules, RANGED_ATTACK);
+            }
+
+            return modules;
+        };
+
+        console.log(getAttacks());
+
+        spawnCreep([TOUGH, RANGED_ATTACK, MOVE], 'guard');
     }
 };
