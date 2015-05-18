@@ -10,8 +10,6 @@ module.exports = function (creep) {
         }
     });
 
-    console.log(carrier[0]);
-
     if (carrier[0]) {
         creep.transferEnergy(carrier[0]);
     }
