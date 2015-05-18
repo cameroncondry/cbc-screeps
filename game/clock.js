@@ -26,7 +26,7 @@ module.exports = function () {
     var getTough = function (amount) {
         var modules = [];
 
-        amount = Math.round(score / 500);
+        amount += Math.round(score / 500);
 
         for (var i = 0; i < amount; i++) {
             modules.push(TOUGH);
