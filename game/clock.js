@@ -55,7 +55,7 @@ module.exports = function () {
     }
 
     else if (minions.harvest > 0) {
-        modules = getTough(minions.guard + 1);
+        modules = getTough(minions.guard + 2);
 
         modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE);
 
