@@ -52,7 +52,7 @@ module.exports = function () {
         spawnCreep([CARRY, MOVE, MOVE], {module: 'carry'});
     }
 
-    else if (score > 1000 && minions.runner < 1) {
+    else if (score > 1000 && minions.runner < 1 || score > 2000 && minions.runner < 2) {
         spawnCreep([CARRY, MOVE, MOVE, CARRY, MOVE], {module: 'runner'});
     }
 
