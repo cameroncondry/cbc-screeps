@@ -6,7 +6,7 @@ module.exports = function (creep) {
 
     var carrier = creep.pos.findInRange(FIND_MY_CREEPS, 1, {
         filter: function (creep) {
-            return creep.memory.module == 'runner';
+            return creep.memory.module == 'carry';
         }
     });
 
