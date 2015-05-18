@@ -1,9 +1,9 @@
 var hm = require('helpme');
+var clock = require('clock');
 
 var modules = {
     build: require('build'),
     carry: require('carry'),
-    clock: require('clock'),
     guard: require('guard'),
     harvest: require('harvest'),
     medic: require('medic'),
