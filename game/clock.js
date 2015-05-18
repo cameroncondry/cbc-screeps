@@ -42,14 +42,14 @@ module.exports = function () {
     };
 
     if (minions.harvest == 2 && score > 1800 && score < 2100) {
-        spawnCreep([WORK, WORK, WORK, MOVE, MOVE], {module: 'harvest', extreme: true});
+        spawnCreep([WORK, WORK, WORK, WORK, MOVE], {module: 'harvest', extreme: true});
     }
 
     else if (minions.harvest < 2) {
         spawnCreep([WORK, WORK, WORK, WORK, MOVE], {module: 'harvest'});
     }
 
-    else if (minions.runner < 3 || (minions.runner < 5 && score > 1800 && score < 2100)) {
+    else if (minions.runner < 3 || (minions.runner < 4 && score > 1800 && score < 2100)) {
         spawnCreep([CARRY, MOVE, MOVE, CARRY, MOVE], {module: 'runner'});
     }
 
