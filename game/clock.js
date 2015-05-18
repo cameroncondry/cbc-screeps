@@ -1,6 +1,7 @@
 var hm = require('helpme');
 
 module.exports = function () {
+    var modules = [];
     var creeps = Game.creeps;
     var spawn = Game.spawns.Spawn1;
     var minions = {
@@ -31,20 +32,32 @@ module.exports = function () {
     }
 
     else if (minions.medic < minions.guard / 2) {
-        spawnCreep([TOUGH, HEAL, MOVE], 'medic');
+        modules = [TOUGH];
+
+        var getHeals = function () {
+            for (var i = 0; i <= minions.medic; i++) {
+                modules.push(HEAL);
+            }
+        };
+
+        getHeals();
+
+        modules.push(MOVE);
+
+        spawnCreep(modules, 'medic');
     }
 
     else if (minions.harvest > 0) {
-        var modules = [TOUGH];
+        modules = [TOUGH];
 
         var getAttacks = function () {
-            for (var i = 0; i < minions.guard; i++) {
+            for (var i = 0; i <= minions.guard; i++) {
                 modules.push(RANGED_ATTACK);
             }
         };
 
         getAttacks();
-        
+
         modules.push(MOVE);
 
         spawnCreep(modules, 'guard');
