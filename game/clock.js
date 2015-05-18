@@ -4,11 +4,12 @@ module.exports = function () {
     var modules = [];
     var creeps = Game.creeps;
     var spawn = Game.spawns.Spawn1;
-    var score = spawn.room.survivalInfo.score;
+    var score = spawn.room.survivalInfo.score || 0;
     var minions = {
         total: 0,
-        harvest: 0,
         build: 0,
+        carry: 0,
+        harvest: 0,
         guard: 0,
         medic: 0,
         runner: 0
@@ -36,18 +37,18 @@ module.exports = function () {
     };
 
     var spawnCreep = function (modules, memory) {
-        if (!hm.isNumber(spawn.createCreep(modules, undefined, memory))) {
+        var creep = spawn.createCreep(modules, undefined, memory);
+
+        if (!hm.isNumber(creep)) {
             console.log('created ' + memory.module, modules);
         }
+
+        return creep;
     };
 
     if (minions.harvest < 2) {
-        spawnCreep([WORK, WORK, WORK, WORK, MOVE], {module: 'harvest'});
+        spawnCreep([WORK, WORK, WORK, CARRY, MOVE], {module: 'harvest'});
     }
-
-    //else if (minions.harvest == 2 && score > 1800 && score < 1900) {
-    //    spawnCreep([WORK, WORK, WORK, WORK, MOVE], {module: 'harvest', source: true});
-    //}
 
     else if (minions.runner < 3) {
         spawnCreep([CARRY, MOVE, CARRY, CARRY, MOVE], {module: 'runner'});
@@ -62,7 +63,7 @@ module.exports = function () {
     }
 
     else if (minions.harvest > 0) {
-        modules = getTough(minions.guard);
+        modules = getTough(0);
 
         modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE);
 

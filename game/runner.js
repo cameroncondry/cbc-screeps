@@ -16,6 +16,6 @@ module.exports = function (creep) {
     }
 
     if (!sources[0]) {
-        creep.moveTo({x: 24, y: 28});
+        creep.moveTo(spawn.pos.x, spawn.pos.y + 1);
     }
 };

@@ -1,34 +1,19 @@
 var hm = require('helpme');
 
-var build = require('build');
-var clock = require('clock');
-var guard = require('guard');
-var harvest = require('harvest');
-var runner = require('runner');
-var medic = require('medic');
+var modules = {
+    build: require('build'),
+    carry: require('carry'),
+    clock: require('clock'),
+    guard: require('guard'),
+    harvest: require('harvest'),
+    medic: require('medic'),
+    runner: require('runner')
+};
 
 clock();
 
 for (var name in Game.creeps) {
     var creep = Game.creeps[name];
 
-    if (creep.memory.module == 'build') {
-        build(creep);
-    }
-
-    if (creep.memory.module == 'guard' ) {
-        guard(creep);
-    }
-
-    if (creep.memory.module == 'harvest') {
-        harvest(creep);
-    }
-
-    if (creep.memory.module == 'runner') {
-        runner(creep);
-    }
-
-    if (creep.memory.module == 'medic' ) {
-        medic(creep);
-    }
+    modules[creep.memory.module](creep);
 }
