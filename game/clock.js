@@ -35,33 +35,38 @@ module.exports = function () {
         return modules;
     };
 
-    var spawnCreep = function (modules, type) {
-        if (!hm.isNumber(spawn.createCreep(modules, undefined, {module: type}))) {
+    var spawnCreep = function (modules, memory) {
+        if (!hm.isNumber(spawn.createCreep(modules, undefined, memory))) {
             console.log('created ' + type, modules);
         }
     };
 
+    if (minions.harvest == 2 && score > 1800 && score < 2100) {
+        spawnCreep([WORK, WORK, WORK, MOVE, MOVE], {module: 'harvest', extreme: true})
+    }
+
     if (minions.harvest < 2) {
-        spawnCreep([WORK, WORK, WORK, WORK, MOVE], 'harvest');
+        spawnCreep([WORK, WORK, WORK, WORK, MOVE], {module: 'harvest'});
     }
 
     else if (minions.runner < 3) {
-        spawnCreep([CARRY, CARRY, MOVE, MOVE, MOVE], 'runner');
+        spawnCreep([CARRY, CARRY, MOVE, MOVE, MOVE], {module: 'runner'});
     }
 
     else if (minions.medic < minions.guard / 2) {
-        modules = getTough(minions.medic - 2);
+        //modules = getTough(minions.medic - 2);
+        modules = [];
 
         modules.push(HEAL, HEAL, MOVE, MOVE, MOVE);
 
-        spawnCreep(modules, 'medic');
+        spawnCreep(modules, {module: 'medic'});
     }
 
     else if (minions.harvest > 0) {
-        modules = getTough(minions.guard + 2);
+        modules = getTough(minions.guard);
 
         modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE);
 
-        spawnCreep(modules, 'guard');
+        spawnCreep(modules, {module: 'guard'});
     }
 };

@@ -1,6 +1,11 @@
 module.exports = function (creep) {
     var sources = creep.room.find(FIND_SOURCES);
 
-    creep.moveTo(sources[3]);
-    creep.harvest(sources[3]);
+    if (creep.memory.extreme) {
+        creep.moveTo(sources[1]);
+        creep.harvest(sources[1]);
+    } else {
+        creep.moveTo(sources[3]);
+        creep.harvest(sources[3]);
+    }
 };
