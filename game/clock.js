@@ -9,7 +9,8 @@ module.exports = function () {
         harvest: 0,
         build: 0,
         guard: 0,
-        medic: 0
+        medic: 0,
+        runner: 0
     };
 
     if (!hm.isNull(spawn.spawning)) return; // no action when already spawning
@@ -38,7 +39,11 @@ module.exports = function () {
     };
 
     if (minions.harvest < 2) {
-        spawnCreep([WORK, CARRY, MOVE], 'harvest');
+        spawnCreep([WORK, WORK, WORK, WORK, MOVE], 'harvest');
+    }
+
+    else if (minions.runner < 2) {
+        spawnCreep([CARRY, CARRY, MOVE, MOVE], 'runner');
     }
 
     else if (minions.medic < minions.guard / 2) {

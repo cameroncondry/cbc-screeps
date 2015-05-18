@@ -4,6 +4,7 @@ var build = require('build');
 var clock = require('clock');
 var guard = require('guard');
 var harvest = require('harvest');
+var runner = require('runner');
 var medic = require('medic');
 
 clock();
@@ -21,6 +22,10 @@ for (var name in Game.creeps) {
 
     if (creep.memory.module == 'harvest') {
         harvest(creep);
+    }
+
+    if (creep.memory.module == 'runner') {
+        runner(creep);
     }
 
     if (creep.memory.module == 'medic' ) {
