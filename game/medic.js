@@ -3,6 +3,8 @@ module.exports = function (creep) {
 
     var target = creep.pos.findClosest(FIND_MY_CREEPS, {
         filter: function (object) {
+            console.log(object.memory.module);
+
             return object.hits < object.hitsMax;
         }
     });

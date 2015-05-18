@@ -35,6 +35,6 @@ module.exports = function () {
     }
 
     else if (minions.harvest > 0) {
-        spawnCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK], 'guard');
+        spawnCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, MOVE], 'guard');
     }
 };
