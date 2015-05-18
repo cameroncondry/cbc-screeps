@@ -1,3 +1,5 @@
+require('helpme');
+
 module.exports = function () {
     var creeps = Game.creeps;
     var spawn = Game.spawns.Spawn1;
