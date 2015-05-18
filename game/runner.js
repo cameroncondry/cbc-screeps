@@ -15,5 +15,7 @@ module.exports = function (creep) {
         return;
     }
 
-    creep.moveTo({x: 24, y: 28});
+    if (!sources[0]) {
+        creep.moveTo({x: 24, y: 28});
+    }
 };
