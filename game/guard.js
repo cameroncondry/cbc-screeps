@@ -2,7 +2,7 @@ module.exports = function (creep) {
     var spawn = Game.spawns.Spawn1;
     var targets = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 3);
 
-    if (targets.length) {
+    if (targets.length && creep.hits / creep.hitsMax > 0.4) {
         creep.rangedAttack(targets[0]);
 
         var enemy = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 2);
