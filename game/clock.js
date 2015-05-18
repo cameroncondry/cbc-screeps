@@ -35,18 +35,18 @@ module.exports = function () {
     }
 
     else if (minions.harvest > 0) {
-        var getAttacks = function () {
-            var modules = [];
+        var modules = [TOUGH];
 
+        var getAttacks = function () {
             for (var i = 0; i < minions.guard; i++) {
                 modules.push(RANGED_ATTACK);
             }
-
-            return modules;
         };
 
-        console.log([TOUGH, MOVE].push(getAttacks()));
+        getAttacks();
+        
+        modules.push(MOVE);
 
-        spawnCreep([TOUGH, RANGED_ATTACK, MOVE], 'guard');
+        spawnCreep(modules, 'guard');
     }
 };
