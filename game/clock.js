@@ -32,7 +32,7 @@ module.exports = function () {
         spawnCreep([TOUGH, MOVE, HEAL], 'medic');
     }
 
-    else if (minions.harvest > 0 && minions.medic > 0) {
+    else if (minions.harvest > 0) {
         spawnCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK], 'guard');
     }
 };
