@@ -9,6 +9,8 @@ module.exports = function () {
         medic: 0
     };
 
+    if (spawn.spawning) return; // no action when already spawning
+
     for (var i in creeps) {
         var creep = creeps[i];
 
@@ -16,17 +18,15 @@ module.exports = function () {
         minions[creep.memory.module]++;
     }
 
-    if (!spawn.spawning) {
-        if (minions.harvest < 2) {
-            spawn.createCreep([WORK, CARRY, CARRY, MOVE], undefined, {module: 'harvest'});
-        }
+    if (minions.harvest < 2) {
+        spawn.createCreep([WORK, CARRY, CARRY, MOVE], undefined, {module: 'harvest'});
+    }
 
-        if (minions.medic < 1 && minions.guard > 0) {
-            spawn.createCreep([TOUGH, MOVE, HEAL], undefined, {module: 'medic'});
-        }
+    if (minions.medic < 1 && minions.guard > 0) {
+        spawn.createCreep([TOUGH, MOVE, HEAL], undefined, {module: 'medic'});
+    }
 
-        if (minions.harvest > 0 && minions.medic > 0 || minions.guard === 0) {
-            spawn.createCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK], undefined, {module: 'guard'});
-        }
+    if (minions.harvest > 0 && minions.medic > 0 || minions.guard === 0) {
+        spawn.createCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK], undefined, {module: 'guard'});
     }
 };

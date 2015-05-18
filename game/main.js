@@ -1,5 +1,3 @@
-console.log('test sync');
-
 var build = require('build');
 var clock = require('clock');
 var guard = require('guard');
