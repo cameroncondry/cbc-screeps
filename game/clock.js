@@ -37,7 +37,7 @@ module.exports = function () {
 
     var spawnCreep = function (modules, memory) {
         if (!hm.isNumber(spawn.createCreep(modules, undefined, memory))) {
-            console.log('created ' + type, modules);
+            console.log('created ' + memory.module, modules);
         }
     };
 
