@@ -20,16 +20,16 @@ module.exports = function () {
 
     if (minions.harvest < 2) {
         console.log('create harvest');
-        spawn.createCreep([WORK, CARRY, CARRY, MOVE], undefined, {module: 'harvest'});
+        console.log(spawn.createCreep([WORK, CARRY, CARRY, MOVE], undefined, {module: 'harvest'}));
     }
 
     if (minions.medic < 1 && minions.guard > 0) {
         console.log('create medic');
-        spawn.createCreep([TOUGH, MOVE, HEAL], undefined, {module: 'medic'});
+        console.log(spawn.createCreep([TOUGH, MOVE, HEAL], undefined, {module: 'medic'}));
     }
 
     if (minions.harvest > 0 && minions.medic > 0 || minions.guard === 0) {
         console.log('create guard');
-        spawn.createCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK], undefined, {module: 'guard'});
+        console.log(spawn.createCreep([TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK], undefined, {module: 'guard'}));
     }
 };
