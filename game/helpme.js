@@ -7,7 +7,7 @@
  Documentation found in README.md
  */
 
-(function() {
+module.exports = (function() {
     'use strict';
     var HelpMe;
 

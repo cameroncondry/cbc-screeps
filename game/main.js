@@ -1,3 +1,5 @@
+require('helpme');
+
 var build = require('build');
 var clock = require('clock');
 var guard = require('guard');
@@ -6,7 +8,7 @@ var medic = require('medic');
 
 clock();
 
-console.log(hm.isArray([1, 2, 3]));
+console.log(hm.isString('hello'));
 
 for (var name in Game.creeps) {
     var creep = Game.creeps[name];

@@ -9,6 +9,8 @@ module.exports = function () {
         medic: 0
     };
 
+    console.log(hm.isNumber('hello'));
+
     if (spawn.spawning) return; // no action when already spawning
 
     for (var i in creeps) {
