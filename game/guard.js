@@ -4,6 +4,11 @@ module.exports = function (creep) {
 
     if (targets.length > 0) {
         creep.rangedAttack(targets[0]);
+
+        if (creep.pos.findInRange(FIND_HOSTILE_CREEPS, 2)) {
+            creep.moveTo(creep.pos.x, creep.pos.y - 1);
+        }
+
         return;
     }
 
