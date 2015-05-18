@@ -9,8 +9,6 @@ module.exports = function (creep) {
 
     if (targets.length) {
         creep.rangedAttack(targets[0]);
-        creep.rangedAttack(targets[0]);
-        creep.rangedAttack(targets[0]);
 
         var enemy = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 2);
 
