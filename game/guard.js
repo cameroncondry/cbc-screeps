@@ -7,6 +7,8 @@ module.exports = function (creep) {
 
         var enemy = creep.pos.findClosest(FIND_HOSTILE_CREEPS);
 
+        console.log(creep.pos.inRangeTo(enemy, 2));
+
         if (creep.pos.inRangeTo(enemy, 2)) {
             creep.moveTo(enemy.pos.x - 1, enemy.pos.y - 1);
         }
