@@ -1,5 +1,3 @@
-var hm = require('helpme');
-
 module.exports = function () {
     var modules = [];
     var creeps = Game.creeps;
@@ -15,7 +13,7 @@ module.exports = function () {
         runner: 0
     };
 
-    if (spawn && !hm.isNull(spawn.spawning)) return; // no action when already spawning
+    if (spawn && !spawn.spawning) return; // no action when already spawning
 
     for (var i in creeps) {
         var creep = creeps[i];
@@ -39,7 +37,7 @@ module.exports = function () {
     var spawnCreep = function (modules, memory) {
         var creep = spawn.createCreep(modules, undefined, memory);
 
-        if (!hm.isNumber(creep)) {
+        if (typeof creep != 'number') {
             console.log('created ' + memory.module, modules);
         }
 

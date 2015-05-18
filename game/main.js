@@ -1,4 +1,3 @@
-var hm = require('helpme');
 var clock = require('clock');
 
 var modules = {
