@@ -49,17 +49,17 @@ module.exports = function () {
     }
 
     else if (minions.carry < 3) {
-        spawnCreep([CARRY, MOVE, CARRY, MOVE], {module: 'carry'});
+        spawnCreep([CARRY, MOVE, MOVE], {module: 'carry'});
     }
 
-    else if (score > 1000 && minions.runner < 2) {
+    else if (score > 1000 && minions.runner < 1) {
         spawnCreep([CARRY, MOVE, MOVE, CARRY, MOVE], {module: 'runner'});
     }
 
     else if (minions.medic < minions.guard / 3) {
-        modules = [];
+        modules = getTough(0);
 
-        modules.push(HEAL, MOVE, HEAL, HEAL, MOVE);
+        modules.push(HEAL, HEAL, HEAL, HEAL, MOVE);
 
         spawnCreep(modules, {module: 'medic'});
     }
