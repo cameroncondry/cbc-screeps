@@ -11,9 +11,7 @@ module.exports = function () {
         medic: 0
     };
 
-    console.log(hm.isUndefined(spawn.spawning), spawn.spawning);
-
-    if (!hm.isUndefined(spawn.spawning)) return; // no action when already spawning
+    if (!hm.isNull(spawn.spawning)) return; // no action when already spawning
 
     for (var i in creeps) {
         var creep = creeps[i];
