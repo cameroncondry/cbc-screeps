@@ -10,5 +10,8 @@ module.exports = function (creep) {
 
     if (targets.length > 0) {
         creep.moveTo(targets[0]);
+        return;
     }
+
+    creep.moveTo({x: 26, y: 26});
 };

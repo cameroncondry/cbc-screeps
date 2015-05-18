@@ -24,7 +24,7 @@ module.exports = function () {
     var getTough = function (amount) {
         var modules = [];
 
-        for (var i = 0; i <= amount; i++) {
+        for (var i = 0; i < amount; i++) {
             modules.push(TOUGH);
         }
 
@@ -42,25 +42,17 @@ module.exports = function () {
     }
 
     else if (minions.medic < minions.guard / 2) {
-        modules = getTough(minions.medic);
+        modules = getTough(minions.medic + 1);
 
-        modules.push(HEAL, HEAL, MOVE);
+        modules.push(HEAL, HEAL, MOVE, MOVE);
 
         spawnCreep(modules, 'medic');
     }
 
     else if (minions.harvest > 0) {
-        modules = [TOUGH];
+        modules = getTough(minions.guard + 1);
 
-        var getAttacks = function () {
-            for (var i = -1; i <= minions.guard; i++) {
-                modules.push(RANGED_ATTACK);
-            }
-        };
-
-        getAttacks();
-
-        modules.push(MOVE);
+        modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE);
 
         spawnCreep(modules, 'guard');
     }
