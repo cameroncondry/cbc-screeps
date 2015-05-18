@@ -4,6 +4,7 @@ module.exports = function () {
     var modules = [];
     var creeps = Game.creeps;
     var spawn = Game.spawns.Spawn1;
+    var score = spawn.room.survivalInfo.score;
     var minions = {
         total: 0,
         harvest: 0,
@@ -12,6 +13,8 @@ module.exports = function () {
         medic: 0,
         runner: 0
     };
+
+    console.log(score);
 
     if (!hm.isNull(spawn.spawning)) return; // no action when already spawning
 
