@@ -8,7 +8,7 @@ module.exports = function (creep) {
         creep.pickup(sources[0]);
     }
 
-    if (!sources || creep.energy == creep.energyCapacity) {
+    if (!sources[0] || creep.energy == creep.energyCapacity) {
         creep.moveTo(spawn);
         creep.transferEnergy(spawn);
     }
