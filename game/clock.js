@@ -11,9 +11,7 @@ module.exports = function () {
         medic: 0
     };
 
-    console.log(hm.isNumber('hello'));
-
-    if (spawn.spawning) return; // no action when already spawning
+    if (!hm.isUndefined(spawn.spawning)) return; // no action when already spawning
 
     for (var i in creeps) {
         var creep = creeps[i];
@@ -23,7 +21,7 @@ module.exports = function () {
     }
 
     var spawnCreep = function (modules, type) {
-        if (typeof spawn.createCreep(modules, undefined, {module: type}) != 'number') {
+        if (!hm.isNumber(spawn.createCreep(modules, undefined, {module: type}))) {
             console.log('created ' + type);
         }
     };
