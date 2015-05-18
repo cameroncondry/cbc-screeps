@@ -41,7 +41,7 @@ module.exports = function () {
         }
     };
 
-    if (minions.harvest == 2 && score > 1800 && score < 2100) {
+    if (minions.harvest == 2 && score > 1800 && score < 1900) {
         spawnCreep([WORK, WORK, WORK, WORK, MOVE], {module: 'harvest', extreme: true});
     }
 
@@ -49,7 +49,7 @@ module.exports = function () {
         spawnCreep([WORK, WORK, WORK, WORK, MOVE], {module: 'harvest'});
     }
 
-    else if (minions.runner < 3 || (minions.runner < 4 && score > 1800 && score < 2100)) {
+    else if (minions.runner < 3 || (minions.runner < 4 && score > 1800 && score < 1900)) {
         spawnCreep([CARRY, MOVE, MOVE, CARRY, MOVE], {module: 'runner'});
     }
 
