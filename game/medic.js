@@ -25,6 +25,6 @@ module.exports = function (creep) {
     });
 
     if (target) {
-        creep.moveTo(target.pos.x, target.pos.y - 1);
+        creep.moveTo(target.pos.x, target.pos.y - 2);
     }
 };
