@@ -17,6 +17,17 @@ module.exports = function (creep) {
     }
 
     if (!sources[0]) {
+        var harvester = creep.pos.findClosest(FIND_MY_CREEPS, {
+            filter: function (creep) {
+                return creep.memory.module == 'harvest';
+            }
+        });
+
+        if (harvester[0]) {
+            creep.moveTo(harvester[0].pos.x, harvester[0].pos.y - 1);
+            return;
+        }
+
         creep.moveTo(spawn.pos.x, spawn.pos.y + 1);
     }
 };
