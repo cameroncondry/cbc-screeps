@@ -154,6 +154,8 @@ module.exports = (function() {
         });
     }
 
+    return new HelpMe();
+
 }).call(this);
 
 //# sourceMappingURL=helpme.js.map

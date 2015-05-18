@@ -1,4 +1,4 @@
-require('helpme');
+var hm = require('helpme');
 
 module.exports = function () {
     var creeps = Game.creeps;

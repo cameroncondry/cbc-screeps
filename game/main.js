@@ -1,4 +1,4 @@
-require('helpme');
+var hm = require('helpme');
 
 var build = require('build');
 var clock = require('clock');
