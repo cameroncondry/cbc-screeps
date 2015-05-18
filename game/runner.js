@@ -3,7 +3,7 @@ module.exports = function (creep) {
     var sources = creep.room.find(FIND_DROPPED_ENERGY);
     var enemies = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 6);
 
-    if (creep.energy < creep.energyCapacity && !enemies.length) {
+    if (sources[0] && creep.energy < creep.energyCapacity && !enemies.length) {
         if (!creep.pos.isNearTo(sources[0])) creep.moveTo(sources[0]);
 
         creep.pickup(sources[0]);
