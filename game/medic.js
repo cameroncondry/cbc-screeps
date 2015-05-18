@@ -10,6 +10,7 @@ module.exports = function (creep) {
     if (target) {
         creep.moveTo(target);
         creep.heal(target);
+        return;
     }
 
     target = creep.pos.findClosest(FIND_MY_CREEPS, {
