@@ -51,7 +51,7 @@ module.exports = function () {
         modules = [TOUGH];
 
         var getAttacks = function () {
-            for (var i = 0; i <= minions.guard; i++) {
+            for (var i = -1; i <= minions.guard; i++) {
                 modules.push(RANGED_ATTACK);
             }
         };
