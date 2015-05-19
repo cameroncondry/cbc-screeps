@@ -14,7 +14,9 @@ module.exports = function (creep) {
             creep.rangedHeal(target);
         }
 
-        creep.moveTo(target.pos.x, target.pos.y - 2);
+        if (target.memory.module == 'guard') {
+            creep.moveTo(target.pos.x, target.pos.y - 2);
+        }
 
         return;
     }
