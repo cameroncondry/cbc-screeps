@@ -67,7 +67,7 @@ module.exports = function () {
     else if (minions.harvest > 0 && ((score < 1000 && minions.guard < 6) || (score > 1000 && score < 2100 && minions.guard < 12) || score > 2100)) {
         modules = getTough(0);
 
-        modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE);
+        modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE);
 
         spawnCreep(modules, {module: 'guard'});
     }
