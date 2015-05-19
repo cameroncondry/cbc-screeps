@@ -64,7 +64,7 @@ module.exports = function () {
         spawnCreep(modules, {module: 'medic'});
     }
 
-    else if (minions.harvest > 0 && ((score < 1000 && minions.guard < 5) || (score > 1000 && score < 2000 && minions.guard < 9))) {
+    else if (minions.harvest > 0 && ((score < 1000 && minions.guard < 6) || (score > 1000 && score < 2000 && minions.guard < 12))) {
         modules = getTough(0);
 
         modules.push(RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE);
