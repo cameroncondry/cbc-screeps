@@ -12,13 +12,8 @@ module.exports = function (creep) {
             creep.heal(target);
         } else {
             creep.rangedHeal(target);
-        }
-
-        if (target.memory.module == 'guard') {
             creep.moveTo(target.pos.x, target.pos.y - 2);
         }
-
-        return;
     }
 
     target = creep.pos.findClosest(FIND_MY_CREEPS, {
