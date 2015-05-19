@@ -13,6 +13,7 @@ module.exports = function (creep) {
         } else {
             creep.rangedHeal(target);
             creep.moveTo(target.pos.x, target.pos.y - 2);
+            return;
         }
     }
 
